@@ -1,0 +1,19 @@
+-- Revert ofact:init from pg
+
+BEGIN;
+
+DROP TABLE IF EXISTS invoice_line;
+
+DROP TABLE IF EXISTS invoice;
+
+DROP TABLE IF EXISTS product;
+
+DROP TABLE IF EXISTS visitor;
+
+DROP DOMAIN IF EXISTS pass;
+
+DROP DOMAIN IF EXISTS mail;
+
+DROP DOMAIN IF EXISTS pcode;
+
+COMMIT;
