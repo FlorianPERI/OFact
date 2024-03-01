@@ -1,7 +1,7 @@
 BEGIN;
 
 CREATE TABLE price_with_taxes (
-    product_id INT PRIMARY KEY REFERENCES product (id), price_with_taxes INT NOT NULL
+    product_id INT PRIMARY KEY REFERENCES product (id), price_with_taxes FLOAT NOT NULL
 );
 
 INSERT INTO
