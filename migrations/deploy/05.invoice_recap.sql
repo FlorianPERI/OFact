@@ -8,18 +8,18 @@ SELECT id,
       (
         SELECT name
         FROM visitor
-        WHERE id = invoice.visitor_id
+        WHERE id = i.visitor_id
     ) AS visitor_name,
     (
         SELECT COALESCE(SUM(( 
           SELECT price_with_taxes 
           FROM price_with_taxes 
-          WHERE product_id = invoice_line.product_id) * quantity
+          WHERE product_id = il.product_id) * quantity
           ), 0)
-        FROM invoice_line
-        WHERE invoice_id = invoice.id
+        FROM invoice_line il
+        WHERE invoice_id = i.id
     ) AS total
 
-FROM invoice;
+FROM invoice i;
 
 COMMIT;

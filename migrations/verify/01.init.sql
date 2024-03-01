@@ -11,7 +11,7 @@ SELECT
     city
 FROM visitor;
 
-SELECT label, price, price_with_taxes FROM product;
+SELECT label, price FROM product;
 
 SELECT visitor_id, issued_at, paid_at FROM invoice;
 
