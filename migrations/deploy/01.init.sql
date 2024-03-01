@@ -28,7 +28,7 @@ CREATE TABLE invoice_line (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, quantity INT NOT NULL, invoice_id INT REFERENCES invoice (id) NOT NULL, product_id INT REFERENCES product (id) NOT NULL
 );
 
-CREATE INDEX idx_invoice_line_invoice_id ON invoice_line (invoice_id);
+CREATE INDEX ON invoice_line (invoice_id);
 
 CREATE INDEX ON invoice (visitor_id);
 
